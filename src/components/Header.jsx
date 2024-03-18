@@ -4,11 +4,12 @@ import { FaRegUser } from "react-icons/fa";
 import { MdFavoriteBorder } from "react-icons/md";
 import { FiShoppingCart } from "react-icons/fi";
 import { useDispatch } from 'react-redux';
-
+import { useSelector } from 'react-redux';
 
 const Header = () => {
 
     const dispatch = useDispatch();
+    const {cardItems} = useSelector(state => state.card)
 
     return (
         <div className='font-roboto shadow'>
@@ -29,6 +30,7 @@ const Header = () => {
                     </div>
                     <div onClick={() => dispatch({type: `DRAWER`, payload: true})} className='text-md flex hover:text-orange-400 duration-200 cursor-pointer'> 
                         <FiShoppingCart  className='mt-3 mr-2 text-2xl hover:text-orange-400 duration-200' />
+                        <span className='absolute ml-3 mt-1 px-2 bg-red-600 text-white rounded-full text-sm'>{cardItems?.length}</span>
                         <p className='hover:text-orange-400 duration-200  mt-3'>Cart</p>
                     </div>
                 </div>

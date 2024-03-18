@@ -13,7 +13,7 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="details/:id" element={<Details />}></Route>
+          <Route path="detail/:id" element={<Details />}></Route>
         </Routes>
         {drawer && <Card></Card>}
       </BrowserRouter>

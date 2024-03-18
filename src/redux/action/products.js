@@ -4,3 +4,9 @@ const productsActions = () => async (dispatch) => {
         dispatch({ type: "GET_PRODUCTS", payload: data })
     };
     export default productsActions
+
+export const productsActionsDetail = (id) => async (dispatch) => {
+        const data = await fetch(`https://fakestoreapi.com/products/${id}`)
+        .then((res) => res.json())
+        dispatch({ type: "GET_DETAILS", payload: data })
+    };
