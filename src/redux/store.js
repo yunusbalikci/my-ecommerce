@@ -2,6 +2,7 @@ import { combineReducers, createStore, applyMiddleware } from "redux";
 import { composeWithDevTools } from "redux-devtools-extension";
 import {thunk} from "redux-thunk";
 import { drawerReducer } from "./reducer/drawer";
+import { searchReducer } from "./reducer/search";
 import productsReducer from "./reducer/products";
 import productsDetailReducer from "./reducer/productDetail";
 import cardReducer from "./reducer/card";
@@ -20,7 +21,8 @@ const reducers = combineReducers({
     drawer : drawerReducer,
     products : productsReducer,
     product :productsDetailReducer,
-    card: cardReducer
+    card: cardReducer,
+    search: searchReducer
 })
 
 const store = createStore(

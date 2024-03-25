@@ -9,6 +9,7 @@ import { FaShippingFast } from 'react-icons/fa'
 import ProductCarousel from '../components/ProductCarousel'
 import { FaPlus } from "react-icons/fa6";
 import { FaMinus } from "react-icons/fa";
+import Footer from '../components/Footer'
 
 function Details() {
 
@@ -51,7 +52,10 @@ function Details() {
                 <div className='ml-14 flex items-center -mt-10 font-bold'>
                   <h1 className='text-sm p-1 mt-1 mr-1'></h1>
                   
-                  <p className='text-xs mt-0.5 ml-1 text-gray-800  opacity-80 hover:text-orange-400 duration-200 cursor-pointer'>Rate:  - </p>
+                  <p className='text-xs mt-0.5 ml-1 text-gray-800  opacity-80 hover:text-orange-400 duration-200 cursor-pointer'>Rate:  {product?.rating?.rate} </p>
+                  {Array.from({ length: Math.floor(product?.rating?.rate) }, (_, index) => (
+                    <span key={index} className="text-xs ml-1 text-orange-400">⭐</span>
+                  ))}
                   <div className='flex cursor-pointer hover:text-orange-400 duration-200'>
                     <MdFavoriteBorder className='ml-8 text-gray-800 hover:text-orange-400 duration-200 opacity-80 border-orange-400 rounded-full border-' size={20} />
                     <p className='ml-2 pt-0.5 text-gray-800  opacity-80 hover:text-orange-400 duration-200  text-xs'>Add to favorites</p>
@@ -119,6 +123,7 @@ function Details() {
       )}
     </div>
     <ProductCarousel />
+    <Footer/>
   </div>
 )
 }

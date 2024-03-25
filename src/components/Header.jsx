@@ -5,19 +5,29 @@ import { MdFavoriteBorder } from "react-icons/md";
 import { FiShoppingCart } from "react-icons/fi";
 import { useDispatch } from 'react-redux';
 import { useSelector } from 'react-redux';
+import { useState } from 'react';
+import { searchAction } from '../redux/action/search';
+import { Link } from 'react-router-dom';
 
 const Header = () => {
 
     const dispatch = useDispatch();
     const {cardItems} = useSelector(state => state.card)
+    const [search, setSearch] = useState('')
+
+    const searchPost = (e) => {
+        if(e.key === 'Enter'){
+            dispatch(searchAction(search))
+        }
+    }
 
     return (
         <div className='font-roboto shadow'>
             <div className='container flex'>
-                <h1 className='font-bold text-3xl mt-6'>trendie</h1>
+                <Link to="/" className='font-bold text-3xl mt-6'>trendie</Link>
                 <div className='w-full text-md'>
                     <FaSearch className='absolute mt-8 text-orange-400 ml-20 ' />
-                    <input type="text" className='w-8/12 h-10 mt-5 ml-16 bg-gray-100 outline-none border-0 shadow pl-10' placeholder='Search any product...' />
+                    <input value={search} onKeyPress={searchPost} onChange={e => setSearch(e.target.value)} type="text" className='w-8/12 h-10 mt-5 ml-16 bg-gray-100 outline-none border-0 shadow pl-10' placeholder='Search any product...' />
                 </div>
                 <div className='flex whitespace-nowrap mt-4 font-semibold space-x-8'>
                     <div className='text-md flex hover:text-orange-400 duration-200 cursor-pointer'> 
@@ -35,19 +45,22 @@ const Header = () => {
                     </div>
                 </div>
             </div>
+            <div className='bg-orange-400'>
             <div className='container'>
-                <ul className='flex  font-semibold list-none ml-40 mt-4 pb-2 space-x-14'>
-                    <li className='cursor-pointer hover:text-orange-400 duration-200'>Woman</li>
-                    <li className='cursor-pointer hover:text-orange-400 duration-200'>Man</li>
-                    <li className='cursor-pointer hover:text-orange-400 duration-200'>Technologies</li>
-                    <li className='cursor-pointer hover:text-orange-400 duration-200'>Supermarket</li>
-                    <li className='cursor-pointer hover:text-orange-400 duration-200'>Deals</li>
-                    <li className='cursor-pointer hover:text-orange-400 duration-200'>Services</li>
-                    <li className='cursor-pointer hover:text-orange-400 duration-200'>Blog</li>
-                    <li className='cursor-pointer hover:text-orange-400 duration-200'>Contact</li>
-                    <li className='cursor-pointer hover:text-orange-400 duration-200'>Contact</li>
+                <ul className='flex  font-semibold list-none ml-40 mt-4 pb-2 pt-3 space-x-12'>
+                    <li className='cursor-pointer text-white text-lg hover:text-gray-200 duration-200'>Woman</li>
+                    <li className='cursor-pointer text-white text-lg hover:text-gray-200 duration-200'>Man</li>
+                    <li className='cursor-pointer text-white text-lg hover:text-gray-200 duration-200'>Technologies</li>
+                    <li className='cursor-pointer text-white text-lg hover:text-gray-200 duration-200'>Supermarket</li>
+                    <li className='cursor-pointer text-white text-lg hover:text-gray-200 duration-200'>Deals</li>
+                    <li className='cursor-pointer text-white text-lg hover:text-gray-200 duration-200'>Services</li>
+                    <li className='cursor-pointer text-white text-lg hover:text-gray-200 duration-200'>Blog</li>
+                    <li className='cursor-pointer text-white text-lg hover:text-gray-200 duration-200'>Contact</li>
+                    <li className='cursor-pointer text-white text-lg hover:text-gray-200 duration-200'>About</li>
                 </ul>
             </div>
+            </div>
+            
         </div>
     )
 }

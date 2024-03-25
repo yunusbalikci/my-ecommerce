@@ -54,7 +54,7 @@ function Carousel() {
       <div className='flex gap-3 space-x-10 mt-10 '>
         {brands.map((brand , index) => (
           <div className='h-20 w-20 hover:border-orange-400 hover:text-orange-400 '  key={index}>
-            <div className='border-2 hover:border-orange-400 duration-200 rounded-full object-scale-down overflow-hidden cursor-pointer'>
+            <div className='border-2 hover:border-orange-400 duration-200 rounded-full object-scale-down overflow-hidden cursor-pointer hover:shadow-xl'>
               <img src={brand.image} alt={brand.name} className='h-20 w-30 object-scale-down p-2 items-center justify-center mx-auto' />
             </div>
             <p className='text-center mt-1 hover:text-orange-400 duration-200 font-semibold'>{brand.name}</p>
