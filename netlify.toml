@@ -1,0 +1,3 @@
+[build]
+  command = "npm run build" # Projeyi derlemek için kullanılacak komut
+  publish = "dist" # Derleme sonucunda ortaya çıkacak dosyaların bulunduğu dizin
