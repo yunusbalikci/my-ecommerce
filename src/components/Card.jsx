@@ -12,7 +12,7 @@ function Card() {
         dispatch(removeCart(id))
     }
   return (
-    <div className='w-4/12 h-full border fixed top-0 right-0 z-50 bg-gray-50 transition-all duration-500 p-3 font-roboto'>
+    <div className='w-3/4 md:w-4/12 h-full border fixed top-0 right-0 z-50 bg-gray-50 transition-all duration-500 p-3 font-roboto'>
         <div className='flex items-center justify-between h-20'>
             <h1 className='font-bold text-2xl'>
             Cart
@@ -26,8 +26,8 @@ function Card() {
               <div>
                 <div>
                   <div className='flex items-center justify-between pl-3 shadow-lg rounded-xl pr-3 h-28 py-4 mt-3' key={i}>
-                    <img className='h-24 w-24' src={card.image} alt="" />
-                    <h1 className='text-center text-sm'>{(card.title.substring(0,20))}</h1>
+                    <img className='md:h-24 h-16 w-16 md:w-24' src={card.image} alt="" />
+                    <h1 className='text-center text-xs md:text-sm'>{(card.title.substring(0,20))}</h1>
                     <h1 className='whitespace-nowrap'>{card.price} $</h1>
                     <MdDeleteForever onClick={() => deleteCard(card.id)} className='text-red-500 cursor-pointer' size={30} />
                   </div>

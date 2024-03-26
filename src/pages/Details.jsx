@@ -42,37 +42,37 @@ function Details() {
  return (
   <div className='font-roboto'>
     <Header />
-    <div className='container'>
+    <div className='md:container'>
       {product ? (
         <>
-          <div className='flex items-center'>
-              <img src={product.image} className='border-2 p-4 hover:border-orange-400 duration-200 shadow-lg mt-14' alt={product.title} style={{ maxWidth: '300px' }} />
+          <div className='md:flex items-center'>
+              <img src={product.image} className='border-2 p-4 w-1/2 h-64 md:h-auto mx-auto md:mx-  md:w-3/4 hover:border-orange-400 duration-200 shadow-lg mt-6' alt={product.title} style={{ maxWidth: '300px' }} />
               <div className='ml-10'>
-                <h1 className='m-14 text-2xl font-semibold text-center'>{product.title}</h1>
-                <div className='ml-14 flex items-center -mt-10 font-bold'>
+                <h1 className='ml-0 pr-10 md:pr-0 mt-4 md:m-14 text-2xl font-semibold text-center'>{product.title}</h1>
+                <div className='ml-8 md:ml-14 flex items-center -mt-10 font-bold'>
                   <h1 className='text-sm p-1 mt-1 mr-1'></h1>
                   
-                  <p className='text-xs mt-0.5 ml-1 text-gray-800  opacity-80 hover:text-orange-400 duration-200 cursor-pointer'>Rate:  {product?.rating?.rate} </p>
+                  <p className='text-xs mt-16 md:mt-0.5 ml-1 text-gray-800  opacity-80 hover:text-orange-400 duration-200 cursor-pointer'>Rate:  {product?.rating?.rate} </p>
                   {Array.from({ length: Math.floor(product?.rating?.rate) }, (_, index) => (
-                    <span key={index} className="text-xs ml-1 text-orange-400">⭐</span>
+                    <span key={index} className="text-xs mt-14 pt-1 md:pt-0 md:mt-0 ml-1 text-orange-400">⭐</span>
                   ))}
                   <div className='flex cursor-pointer hover:text-orange-400 duration-200'>
-                    <MdFavoriteBorder className='ml-8 text-gray-800 hover:text-orange-400 duration-200 opacity-80 border-orange-400 rounded-full border-' size={20} />
-                    <p className='ml-2 pt-0.5 text-gray-800  opacity-80 hover:text-orange-400 duration-200  text-xs'>Add to favorites</p>
+                    <MdFavoriteBorder className='ml-4 md:ml-8 text-gray-800 hover:text-orange-400 duration-200 opacity-80 border-orange-400 rounded-full mt-16 md:mt-0' size={20} />
+                    <p className='ml-2 pt-0.5 text-gray-800  opacity-80 hover:text-orange-400 duration-200 mt-16 md:mt-0  text-xs'>Add to favorites</p>
                   </div>
               </div>
               <div className='flex justify-between'>
-                <h1 className='ml-14 mt-8 text-3xl font-bold text-orange-300'>{product.price}$</h1>
-                <div className='flex mt-10 items-center space-x-4'>
+                <h1 className='md:ml-14 mt-8 text-3xl font-bold text-orange-300'>{product.price}$</h1>
+                <div className='flex mt-8 mr-5 md:mr-0 md:mt-10 items-center space-x-4'>
                   <FaMinus onClick={decrement} size={30} className='cursor-pointer border rounded-full shadow p-1'></FaMinus>
                   <span className='text-2xl'>{count}</span>
                   <FaPlus onClick={() => increment(product?.rating?.count)} size={30} className='cursor-pointer border rounded-full shadow p-1'></FaPlus>
                 </div>
                 
               </div>
-              <hr className=' ml-4 mt-8' />
+              <hr className='md:ml-4 mt-8' />
               <div className='flex'>
-                <button onClick={addCard} className='ml-14 mt-8 shadow-md w-10/12 h-11 font-bold bg-orange-400 border border-orange-400 text-white px-8 rounded-lg hover:bg-orange-300 hover-text-orange-400 transition duration-200' >Add to cart</button>
+                <button onClick={addCard} className='md:ml-14 mt-8 shadow-md w-10/12 h-11 font-bold bg-orange-400 border border-orange-400 text-white px-8 rounded-lg hover:bg-orange-300 hover-text-orange-400 transition duration-200' >Add to cart</button>
                 <MdFavoriteBorder  className='ml-4 shadow-sm mt-7 text-orange-400 border-orange-400 rounded-full text-2xl hover:text-orange-600 duration-200 cursor-pointer' size={50}  />
               </div>
              <div>
@@ -80,18 +80,18 @@ function Details() {
              </div>
               </div>
 
-              <div className='pl-32 mt-20'>
-                <div className='flex w-56 shadow-xs bg-green-100 pt-1 h-8 text-xs rounded-md'>
+              <div className='md:pl-32  mt-10 md:mt-20'>
+                <div className='flex w-56 shadow-xs mx-auto md:mx-0 bg-green-100 pt-1 h-8 text-xs rounded-md'>
                   <FaShippingFast className='ml-2 mr-3 mt-1 text-green-500' size={20} />
                   <p className='mt-1'>Free shipping and returns</p>
 
                   
                 </div>
-                <div className='flex w-56 shadow-xs bg-green-100 mt-2 pt-1 h-8 text-xs rounded-md'>
+                <div className='flex w-56 shadow-xs  mx-auto md:mx-0 bg-green-100 mt-2 pt-1 h-8 text-xs rounded-md'>
                   <FaShippingFast className='ml-2 mr-3 mt-1 text-green-500' size={20} />
                   <p className='mt-1'>Fast and secure shipping</p>
                 </div>
-                <div className='w-56 p-3 border-2 mt-6 shadow-md mt-2 pt-1 h-44 text-xs rounded-xl'>
+                <div className='w-56 p-3 border-2  mx-auto md:mx-0 mt-6 shadow-md mt-2 pt-1 h-44 text-xs rounded-xl'>
                     <div className='w-36 h-28'>
                       <div className='flex p-2'>
                         <h1 className='hover:underline text-sm text-blue-400 cursor-pointer'>YB Product</h1>

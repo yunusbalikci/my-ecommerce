@@ -50,10 +50,10 @@ const brands = [
 ]
 function Carousel() {
   return (
-    <div className='container font-roboto'>
-      <div className='flex gap-3 space-x-10 mt-10 '>
+    <div className='md:container font-roboto'>
+      <div className='flex flex-wrap md:flex-nowrap gap-3 space-x-7 md:space-x-10 space-y-6 md:space-y-0 mt-6 '>
         {brands.map((brand , index) => (
-          <div className='h-20 w-20 hover:border-orange-400 hover:text-orange-400 '  key={index}>
+          <div className='h-20 w-20 hover:border-orange-400 hover:text-orange-400 ml-6 mt-6 md:mt-0 md:ml-0'  key={index}>
             <div className='border-2 hover:border-orange-400 duration-200 rounded-full object-scale-down overflow-hidden cursor-pointer hover:shadow-xl'>
               <img src={brand.image} alt={brand.name} className='h-20 w-30 object-scale-down p-2 items-center justify-center mx-auto' />
             </div>
@@ -62,14 +62,14 @@ function Carousel() {
         ))}
 
       </div>
-      <div className='flex space-x-4 mt-20'>
-          <div className='w-4/12 h-12 rounded-xl shadow bg-green-100'>
+      <div className='flex flex-col md:flex-row space-y-4 md:space-y-0 ml-6 md:ml-0 space-x-4 mt-20'>
+          <div className='ml-4 w-80 md:w-4/12 h-12 cursor-pointer hover:shadow-lg duration-200 rounded-xl shadow bg-green-100'>
             <p className='text-center text-green-400  font-bold mt-2 text-2xl'>The Latest in Fashion</p>
           </div>
-          <div className='w-4/12 rounded-xl shadow bg-orange-100'>
+          <div className='ml-2 w-80 mr-2 md:w-4/12 h-12 rounded-xl  cursor-pointer hover:shadow-lg duration-200 shadow bg-orange-100'>
             <p className='text-center text-orange-400  font-bold mt-2 text-2xl'>The Most Added the Cart</p>
           </div>
-          <div className='w-4/12 rounded-xl shadow bg-pink-100'>
+          <div className='ml-2 w-80 pr-4 md:w-4/12 h-12 rounded-xl cursor-pointer hover:shadow-lg duration-200 shadow bg-pink-100'>
             <p className='text-center text-pink-500  font-bold mt-2 text-2xl'>Products on Sale</p>
           </div>
       </div>

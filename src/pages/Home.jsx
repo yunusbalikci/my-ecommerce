@@ -22,13 +22,13 @@ function Home() {
 
    console.log(search)
   return (
-    <motion.div
+    <motion.div className=''
     initial={{ opacity: 0 }}
     animate={{ opacity: 1 }}
     >
       <Header></Header>
       <Carousel></Carousel>
-      <div className='container'>
+      <div className='md:container'>
         <div className='flex flex-wrap mb-5 justify-center'>
           {
             search.length > 0 ? 
